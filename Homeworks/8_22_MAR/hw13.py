@@ -4,11 +4,12 @@
 
 def find_max_element(ls):
   if not ls:
-    return 0
+    return -1
   elif len(ls) == 1:
     return ls[0]
-  max = ls[0]
-  if max < find_max_element(ls[1:]):
+  max = find_max_element(ls[1:])
+  if max > ls[0]:
     return max
+  return ls[0]
 
 print(find_max_element([3, 1, 4, 1, 5]))
