@@ -2,11 +2,11 @@
 
 def memoize(fn):
   cache = {}
-  def inner(n):
-    for i in range(n):
-      if i not in cache:
-        cache[i] = fn(n)
-    return fn(n)
+  def inner(*args, **kwargs):
+    key = (args, tuple(sorted(kwargs)))
+    if key not in cache:
+      cache[key] = fn(*args, **kwargs)
+    return cache[key]
   return inner
 
 @memoize

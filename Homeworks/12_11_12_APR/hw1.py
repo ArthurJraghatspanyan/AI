@@ -1,11 +1,11 @@
 # Write a decorator greet_decorator that adds a greeting message before and after the execution of the decorated function.
 
 def greet_decorator(fn):
-  def inner():
+  def inner(*args, **kwargs):
     print("Hello")
-    fn()
+    res = fn(*args, **kwargs)
     print("Goodbye!")
-    return fn
+    return res
   return inner
 
 @greet_decorator 

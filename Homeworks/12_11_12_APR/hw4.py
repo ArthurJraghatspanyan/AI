@@ -2,11 +2,11 @@
 # If not, raise an exception.
 
 def require_login(fn):
-  def inner():
+  def inner(*args, **kwargs):
     global is_logged_in
     if is_logged_in:
-      fn()
-    return fn
+      res = fn(*args, **kwargs)
+    return res
   return inner
 
 @require_login 
@@ -14,7 +14,7 @@ def view_profile():
   print("Accessing user profile...")
 
 # Toggle `is_logged_in` to test
-is_logged_in = False
+is_logged_in = True
 view_profile()
 # Output:
 # Accessing user profile...
