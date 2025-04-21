@@ -3,10 +3,7 @@
 # Experiment with passing different sets of keyword arguments.
 
 def display_student_info(**kwargs):
-  di = {}
-  for key, value in kwargs.items():
-    di[key] = value
-  return di
+  return kwargs
 
 print(display_student_info(name="Alice", age=20, major="CS"))
 print(display_student_info(name=("Bob", "Joe"), age=22, major="CS"))

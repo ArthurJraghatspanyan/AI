@@ -4,4 +4,5 @@ sentence = input("Enter your sentence: ")
 st = set(sentence.strip().split())
 
 for i in st:
-  print(i)
+  if sentence.count(i) == 1:
+    print(i)

@@ -2,10 +2,12 @@
 # The function should return True if the number is prime and False otherwise.
 
 def is_prime(n):
-  if n < 3:
-    return True
-  elif n % 2 == 0:
+  if n <= 1:
     return False
-  return True
+  flag = True
+  for i in range(2, int(n ** 0.5) + 1):
+    if n % i == 0:
+      flag = False
+  return flag
 
-print(is_prime(17))
+print(is_prime(13))

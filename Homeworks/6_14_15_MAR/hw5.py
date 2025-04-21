@@ -2,8 +2,9 @@
 
 def sum_of_digits(num):
   summary = 0
-  for i in str(num):
-    summary += int(i)
+  while num != 0:
+    summary += num % 10
+    num //= 10
   return summary
 
-print(sum_of_digits(45))
+print(sum_of_digits(455))
