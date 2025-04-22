@@ -6,12 +6,12 @@ import time
 
 def memoize(fn):
   cache = {}
-  def inner(n):
+  def inner(*args, **kwargs):
     nonlocal cache
-    for i in range(1, n + 1):
-      cache[i + 1] = fn(n)
-    print(cache[i])
-    return fn(n)
+    key = (args, tuple(sorted(kwargs)))
+    if key not in cache:
+      cache[key] = fn(*args, **kwargs)
+    return cache[key]
   return inner
 
 def time_dec(fn):
@@ -38,7 +38,7 @@ def fibonacci_rec(n):
 
 num = 10
 
-wrapper_memoize(num)
+print(wrapper_memoize(num))
 
 wrapper_timer(num)
 wrapper_timer(num)
