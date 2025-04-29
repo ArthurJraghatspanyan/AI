@@ -1,0 +1,2 @@
+Result in Base64 format: b'SGVsbG8sIEFydGh1cg=='
+Time of function completed: 0.0000081062s
