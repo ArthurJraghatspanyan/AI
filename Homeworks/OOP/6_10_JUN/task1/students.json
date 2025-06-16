@@ -1,0 +1,23 @@
+{
+  "class": "10A",
+  "students": [
+    {
+      "id": 1,
+      "name": "Emma",
+      "grades": {
+        "math": 85,
+        "science": 90,
+        "english": 78
+      }
+    },
+    {
+      "id": 2,
+      "name": "Liam",
+      "grades": {
+        "math": 92,
+        "science": 88,
+        "english": 81
+      }
+    }
+  ]
+}
