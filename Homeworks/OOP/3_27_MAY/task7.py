@@ -16,13 +16,15 @@ class Vector:
       raise TypeError("Object type must be Vector")
     if len(self.data) != len(other.data):
       raise ValueError("Lengths of Vectors must be same")
-    return [self.data[i] * other.data[i] for i in range(len(self.data))]
+    return Vector([self.data[i] * other.data[i] for i in range(len(self.data))])
 
   def __rmul__(self, other):
     if not isinstance(other, int):
       raise TypeError("Object type must be integer.")
-    return [self.data[i] * other for i in range(len(self.data))]
-
+    return Vector([self.data[i] * other for i in range(len(self.data))])
+  
+  def __repr__(self):
+    return f"{self.data}"
 
 class Matrix:
   def __init__(self, data: list):

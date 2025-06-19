@@ -12,13 +12,16 @@ class Vector:
       raise TypeError("Type must be Vector.")
     if len(self.data) != len(other.data):
       raise ValueError("Length of vectors must be same.")
-    return [self.data[i] + other.data[i] for i in range(len(self.data))]
+    return Vector([self.data[i] + other.data[i] for i in range(len(self.data))])
   def __sub__(self, other: list):
     if not isinstance(other, Vector):
       raise TypeError("Type must be Vector.")
     if len(self.data) != len(other.data):
       raise ValueError("Length of vectors must be same.")
-    return [self.data[i] - other.data[i] for i in range(len(self.data))]
+    return Vector([self.data[i] - other.data[i] for i in range(len(self.data))])
+  
+  def __repr__(self):
+    return f"{self.data}"
 
 v1 = Vector([4, 5, 6])
 v2 = Vector([1, 2, 3])
